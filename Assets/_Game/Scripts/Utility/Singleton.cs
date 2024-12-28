@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Singleton<T> : MonoBehaviour where T : Component
 {
     private static T instance;
+    public static T Instance => GetInstance();
 
     private static bool m_applicationIsQuitting = false;
 

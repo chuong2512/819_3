@@ -56,21 +56,13 @@ public class GameManager : MonoBehaviour
 
         _player.GameOver();
 
-        bool isRewardLoaded = AdsManager.GetInstance().IsRewardedAdLoaded();
 
-        if (_scoreManager.Score > 2 && !_isRevive && isRewardLoaded)
-        {
-            _menuController.SwitchMenu(MenuType.Revive);
-            _isRevive = true;
-        }
-        else
-        {
+        
             _menuController.SwitchMenu(MenuType.GameOver);
-        }
+       
 
         SoundController.GetInstance().PlayAudio(AudioType.GAMEOVER);
 
-        AdsManager.GetInstance().ShowInterstitial();
     }
 
     private void Revive()

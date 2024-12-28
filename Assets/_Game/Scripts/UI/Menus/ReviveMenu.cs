@@ -54,7 +54,6 @@ public class ReviveMenu : Menu
         ResetWatchAdButton();
 
         _timer.StopTimer();
-        AdsManager.GetInstance().ShowRewarded();
     }
 
     private void ResetWatchAdButton()

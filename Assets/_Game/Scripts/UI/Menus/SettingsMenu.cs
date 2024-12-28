@@ -41,9 +41,7 @@ public class SettingsMenu : Menu
 
     private void Start()
     {
-        bool isUsingAdmob = AdsManager.GetInstance().adsType == AdsType.Admob;
-        bool isUseGDPR = AdsManager.GetInstance().IsUseGDPR;
-        bool policyEnabled = isUsingAdmob && isUseGDPR;
+        bool policyEnabled = false;
         _adsButton.gameObject.SetActive(policyEnabled);
         _privacyButton.gameObject.SetActive(policyEnabled);
         if (policyEnabled) _panel.sizeDelta = new Vector2(600, 700);
@@ -110,7 +108,6 @@ public class SettingsMenu : Menu
         _adsButton.interactable = false;
         PlayerPrefs.SetInt("npa", -1);
 
-        AdsManager.GetInstance().DestroyObject();
         SoundController.GetInstance().DestroyObject();
 
         //load gdpr scene

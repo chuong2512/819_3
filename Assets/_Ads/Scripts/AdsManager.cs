@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AdsManager : Singleton<AdsManager>
+public class AdsManager : MonoBehaviour
 {
     [SerializeField] AdsDataSO _data;
     [SerializeField] Transform _adsTransform;
@@ -53,9 +53,9 @@ public class AdsManager : Singleton<AdsManager>
         }
     }
 
-    protected override void Awake()
+    protected  void Awake()
     {
-        base.Awake();
+      
 
         if(_ads == null)
         {
